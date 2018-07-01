@@ -1,6 +1,6 @@
 <?php
 /**
- * Created by PhpStorm
+ * Created: 
  * User: 
  * Date: 
  * Time: 
@@ -20,68 +20,68 @@ class KothCommand extends Command
     public function execute(CommandSender $sender, string $commandLabel, array $args): bool{
         if ($sender instanceof Player){
             if (isset($args[0])){
-                if (strtolower($args[0]) === "join"){
+                if (strtolower($args[0]) === "Join"){
                     if ($this->plugin->sendToKoth($sender)){
-                        $sender->sendMessage($this->plugin->getData("joined"));
-                        return true;
+                        $sender->sendMessage($this->plugin->getData("Joined"));
+                        return false;
                     }else{
-                        $sender->sendMessage($this->plugin->getData("not_running"));
+                        $sender->sendMessage($this->plugin->getData("Not_Running"));
                     }
                     return true;
-                } else if (strtolower($args[0]) === "setspawn"){
+                } else if (strtolower($args[0]) === "SetSpawn"){
                     if (!$sender->hasPermission("koth.start")) return true;
-                    $this->plugin->setPoint($sender,"spawn");
-                    $sender->sendMessage("Successfully Added spawnpoint!");
+                    $this->plugin->setPoint($sender,"Spawn");
+                    $sender->sendMessage("Successfully Added SpawnPoint");
                     return true;
                 } else if (strtolower($args[0]) === "p1"){
                     if (!$sender->hasPermission("koth.start")) return true;
                     $this->plugin->setPoint($sender,"p1");
-                    $sender->sendMessage("Successfully Added p1 point (make sure to set p2)");
+                    $sender->sendMessage("Successfully Added P1 Point (Make Sure To Set P2)");
                 } else if (strtolower($args[0]) === "p2"){
                     if (!$sender->hasPermission("koth.start")) return true;
                     $this->plugin->setPoint($sender,"p2");
-                    $sender->sendMessage("Successfully Added p2 point!");
+                    $sender->sendMessage("Successfully Added P2 Point");
                 } else if (strtolower($args[0]) === "start"){
                     if (!$sender->hasPermission("koth.start")) return true;
                     if ($this->plugin->startArena()){
-                        $sender->sendMessage("KOTH Event Started!");
+                        $sender->sendMessage("Koth Event Started");
                     }else{
-                        $sender->sendMessage("No KOTH Arena fully setup...");
+                        $sender->sendMessage("No Koth Arena Fully SetUp");
                     }
                 } else if (strtolower($args[0]) === "stop"){
                     if (!$sender->hasPermission("koth.stop")) return true;
                     if ($this->plugin->forceStop()){
-                        $sender->sendMessage("KOTH Event Force stopped");
+                        $sender->sendMessage("Koth Event Force Stopped");
                     }else{
-                        $sender->sendMessage("No KOTH Arena fully setup...");
+                        $sender->sendMessage("No Koth Arena Fully SetUp");
                     }
                 } else{
                     if ($sender->isOp()) $this->sendHelp($sender);
-                    if (!$sender->isOp()) $sender->sendMessage($this->plugin->prefix()."Join game with /koth join");
+                    if (!$sender->isOp()) $sender->sendMessage($this->plugin->prefix()."Join Game With /koth Join");
                 }
             }else{
                 if ($sender->isOp()) $this->sendHelp($sender);
-                if (!$sender->isOp()) $sender->sendMessage($this->plugin->prefix()."Join game with /koth join");
+                if (!$sender->isOp()) $sender->sendMessage($this->plugin->prefix()."Join Game With /koth Join");
             }
         }else{
             if (isset($args[0])){
                 if (strtolower($args[0]) === "start"){
                     if ($this->plugin->startArena()){
-                        $sender->sendMessage("KOTH Event Started!");
+                        $sender->sendMessage("Koth Event Started");
                     }else{
-                        $sender->sendMessage("No KOTH Arena fully setup...");
+                        $sender->sendMessage("No Koth Arena Fully SetUp");
                     }
                     return true;
                 } else if (strtolower($args[0]) === "stop"){
                     if ($this->plugin->forceStop()){
-                        $sender->sendMessage("KOTH Event Force stopped");
+                        $sender->sendMessage("Koth Event Force Stopped");
                     }else{
-                        $sender->sendMessage("No KOTH Arena fully setup...");
+                        $sender->sendMessage("No Koth Arena Fully SetUp");
                     }
                     return true;
                 }
             }
-            $sender->sendMessage("Error- Cant run that in console!");
+            $sender->sendMessage("Error Cant Run That In Console");
         }
         return true;
     }
