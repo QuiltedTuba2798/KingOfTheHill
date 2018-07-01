@@ -86,13 +86,12 @@ class KothCommand extends Command
         return true;
     }
     public function sendHelp(CommandSender $sender){
-        $sender->sendMessage("---KOTH Commands---");
+        $sender->sendMessage("---OreScape Koth Commands---");
         $sender->sendMessage("Make sure to run first 3 commands to fully setup Arena");
         $sender->sendMessage("1) /koth setspawn - set as many spawn points as your want!");
         $sender->sendMessage("2) /koth p1 - set point 1 for capture area");
         $sender->sendMessage("3) /koth p2 - set point 2 for capture area");
         $sender->sendMessage("/koth start - starts KOTH Match");
         $sender->sendMessage("/koth stop - force stop KOTH Math");
-        $sender->sendMessage("Reload server or restart to setup Arena fully!");
     }
 }
