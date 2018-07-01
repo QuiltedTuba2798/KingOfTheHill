@@ -1,9 +1,9 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: JeremyMorales
- * Date: 6/22/17
- * Time: 10:48 AM
+ * Created by PhpStorm
+ * User: 
+ * Date: 
+ * Time: 
  */
 namespace koth;
 use pocketmine\scheduler\PluginTask;
