@@ -10,5 +10,5 @@ api:
 commands:
   koth:
     usage: "/koth help"
-    description: "Koth Commands"
+    description: "Koth Commands For King Of The Hill"
     permission: koth.*
