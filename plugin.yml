@@ -1,12 +1,9 @@
 name: KingOfTheHill
-author: QuiltedTuba2978
+author: piyushbest
 description: Simple King Of The Hill PMMP Plugin
 version: 1.0.0
 main: koth\KothMain
-api:
-- 3.0.0-ALPHA10
-- 3.0.0-ALPHA11
-- 3.0.0-ALPHA12
+api: 3.0.0
 commands:
   koth:
     usage: "/koth help"
